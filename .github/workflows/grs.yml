@@ -2,7 +2,7 @@ name: Update README cards
 
 on:
   schedule:
-    - cron: "0 0 * * 1" # Runs once weekly at midnight
+    - cron: "0 0 1,16 * *"
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: username=${{ github.repository_owner }}&show_icons=true&theme=transparent
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=transparent&layout=compact
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
